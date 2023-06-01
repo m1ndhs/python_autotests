@@ -5,7 +5,7 @@ import requests
 def create_pokemon():
 
     name_url = 'https://pokemonbattle.me:9104/pokemons'
-    header = {'content-type': 'application/json', 'trainer_token': "ТОКЕН"}
+    header = {'content-type': 'application/json', 'trainer_token': "849b128a59aea9d37655d8d39d180262"}
 
     pokemon_names = ['Бульбазавр', 'Ивизавр', 'Венузавр', 'Чармандер', 'Чармелеон', 'Чаризард', 'Сквиртл',
                          'Вартортл',
@@ -91,7 +91,7 @@ def create_pokemon():
 def change_pokemon_name(pokemon_id):
 
     name_url = 'https://pokemonbattle.me:9104/pokemons'
-    header = {'content-type': 'application/json', 'trainer_token': "ТОКЕН"}
+    header = {'content-type': 'application/json', 'trainer_token': "849b128a59aea9d37655d8d39d180262"}
 
     response = requests.put(name_url, headers=header, json={"pokemon_id":f"{pokemon_id}", "name":"Другое Имя"})
     print(response.json())
@@ -100,7 +100,7 @@ def change_pokemon_name(pokemon_id):
 def catch_pokemon(pokemon_id):
 
     url_catch = "https://pokemonbattle.me:9104/trainers/add_pokeball"
-    header = {'content-type': 'application/json', 'trainer_token': "ТОКЕН"}
+    header = {'content-type': 'application/json', 'trainer_token': "849b128a59aea9d37655d8d39d180262"}
 
     response = requests.post(url_catch, headers=header, json={"pokemon_id":f"{str(pokemon_id)}"})
 
@@ -109,7 +109,7 @@ def catch_pokemon(pokemon_id):
 def kill_pokemon(id):
 
     url_kill = "https://pokemonbattle.me:9104/pokemons/kill"
-    header = {'content-type': 'application/json', 'trainer_token': "ТОКЕН"}
+    header = {'content-type': 'application/json', 'trainer_token': "849b128a59aea9d37655d8d39d180262"}
 
     response = requests.post(url_kill, headers=header, json={"pokemon_id":f"{str(id)}"})
 
